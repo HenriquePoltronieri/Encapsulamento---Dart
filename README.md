@@ -105,20 +105,20 @@ Cole exatamente este conteúdo dentro dele:
 
 1 - O que foi impresso no console quando o seu programa tentou passar a classificação "-5" (vinda do JSON) para o objeto?
 
-    R:
+    R: O programa tentou aplicar a classificação -5, o setter lançou uma exceção e o erro foi capturado pelo try-catch, evitando que o programa travasse.
 
 2 - Como o uso do Encapsulamento neste exercício garantiu a segurança e a integridade dos dados do seu sistema?
 
-    R:
+    R: Protegeu os dados ao impedir acesso direto ao atributo e validar valores no setter, garantindo que apenas classificações válidas fossem aceitas.
 
 3 - Se o arquivo "dados.json" estivesse completamente em branco no momento da leitura, qual seria o comportamento da função jsonDecode?
 
-    R:
+    R: A função jsonDecode lançaria uma FormatException, pois uma string vazia não é um JSON válido.
 
 4 - Qual a principal vantagem de definir o método darPlay() na classe pai de forma abstrata, em vez de criar métodos independentes apenas nas classes filhas?
 
-    R:
+    R: Garante que todas as subclasses implementem darPlay() e permite usar polimorfismo, tratando diferentes objetos de forma uniforme.
 
 5 - Qual foi a maior dificuldade encontrada durante a realização desta atividade?
 
-    R:
+    R: Entender como funciona a privacidade no Dart (por arquivo, não por classe) e organizar corretamente os arquivos.
