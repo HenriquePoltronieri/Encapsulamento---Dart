@@ -1,31 +1,40 @@
+import 'dart:developer';
+import 'dart:io';
+
 abstract class Conteudo {
-    String titulo = '';
-    int _classificacao = 0;
+  String titulo;
+  int _classificacao = 0;
+  Conteudo(this.titulo);
+  
+  int get classificacaoIndicativa => _classificacao;
 
-    int get classificacaoIndicativa => _classificacao
-    
-    set validarClassificacao(int valor) {
-        if (valor < 0 || valor > 18) {
-            throw Exception('Classificação inválida');
-        }
-        _classificacao = valor;
-    }
+set validarClassificacao(int valor) {
+  if (valor >= 0 && valor <= 18) {
+    _classificacao = valor;
+  } else {
+    throw ArgumentError("Classificação Inválida");
+  }
+}
 
-  void darPlay();
+  void darPlay() {}
 }
 
 class Filme extends Conteudo {
+  Filme(String titulo ) : super(titulo);
+  
   @override
   void darPlay() {
-    print('Reproduzindo o filme: $titulo');
+   print("Reproduzindo Filme: $titulo");
   }
 }
 
 class Serie extends Conteudo {
-  int temporadas = 0;
+  int temporada;
+
+  Serie(String titulo, this.temporada) : super(titulo);
 
   @override
   void darPlay() {
-    print('Iniciando a série $titulo com $temporadas temporadas');
+    print("Iniciando a série $titulo com $temporada temporada");
   }
 }
